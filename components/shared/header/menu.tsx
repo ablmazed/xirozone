@@ -1,7 +1,19 @@
-export default function menu() {
+import { ShoppingCart, UserIcon } from 'lucide-react'
+import Link from 'next/link'
+
+export default function Menu() {
   return (
-    <div>
-      <h1>This is Menu Page</h1>
+    <div className="flex justify-end">
+      <nav className="flex gap-3 w-full">
+        <Link href={'/signin'} className="header-button">
+          <UserIcon className="h-8 w-8" />
+          <span className="font-bold">Sign in</span>
+        </Link>
+        <Link href={'/cart'} className="header-button">
+          <ShoppingCart className="h-8 w-8" />
+          <span className="font-bold">Cart</span>
+        </Link>
+      </nav>
     </div>
   )
 }
